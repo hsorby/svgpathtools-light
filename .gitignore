@@ -2,7 +2,7 @@
 .*
 /svgpathtools/nonunittests
 build
-svgpathtools.egg-info
+svgpathtools_light.egg-info
 !.travis.yml
 !/.gitignore
 !/.github
