@@ -3,10 +3,10 @@ import codecs
 import os
 
 
-VERSION = '1.6.1'
+VERSION = '1.6.2rc1'
 AUTHOR_NAME = 'Andy Port'
 AUTHOR_EMAIL = 'AndyAPort@gmail.com'
-GITHUB = 'https://github.com/mathandy/svgpathtools'
+GITHUB = 'https://github.com/hsorby/svgpathtools-light'
 
 _here = os.path.abspath(os.path.dirname(__file__))
 
@@ -17,7 +17,7 @@ def read(relative_path):
         return f.read()
 
 
-setup(name='svgpathtools',
+setup(name='svgpathtools-light',
       packages=['svgpathtools'],
       version=VERSION,
       description=('A collection of tools for manipulating and analyzing SVG '
@@ -27,7 +27,7 @@ setup(name='svgpathtools',
       author=AUTHOR_NAME,
       author_email=AUTHOR_EMAIL,
       url=GITHUB,
-      download_url='{}/releases/download/{}/svgpathtools-{}-py3-none-any.whl'
+      download_url='{}/releases/download/{}/svgpathtools_light-{}-py2.py3-none-any.whl'
                    ''.format(GITHUB, VERSION, VERSION),
       license='MIT',
       install_requires=['numpy'],
@@ -38,9 +38,7 @@ setup(name='svgpathtools',
             "Intended Audience :: Developers",
             "License :: OSI Approved :: MIT License",
             "Operating System :: OS Independent",
-            "Programming Language :: Python :: 2",
             "Programming Language :: Python :: 3",
-            "Programming Language :: Python :: 2.7",
             "Programming Language :: Python :: 3.5",
             "Programming Language :: Python :: 3.6",
             "Programming Language :: Python :: 3.7",
