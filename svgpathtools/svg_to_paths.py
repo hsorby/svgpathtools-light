@@ -1,8 +1,8 @@
 """This submodule contains tools for creating path objects from SVG files.
 The main tool being the svg2paths() function."""
-
+import xml
 # External dependencies
-from xml.dom.minidom import parse
+from xml.dom.minidom import parse, parseString
 import os
 from io import StringIO
 import re
@@ -174,9 +174,15 @@ def svg2paths(svg_file_location,
     # strings are interpreted as file location everything else is treated as
     # file-like object and passed to the xml parser directly
     from_filepath = isinstance(svg_file_location, str) or isinstance(svg_file_location, FilePathLike)
-    svg_file_location = os.path.abspath(svg_file_location) if from_filepath else svg_file_location
+    svg_file_location = os.path.abspath(svg_file_location) if from_filepath and os.path.isfile(svg_file_location) else svg_file_location
 
-    doc = parse(svg_file_location)
+    try:
+        doc = parse(svg_file_location)
+    except OSError:
+        try:
+            doc = parseString(svg_file_location)
+        except xml.parsers.expat.ExpatError:
+            raise Exception('Failed to read content of svg_file_location from disk or as an svg xml string.')
 
     def dom2dict(element):
         """Converts DOM elements to dictionaries of attributes."""
