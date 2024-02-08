@@ -6,3 +6,4 @@ svgpathtools.egg-info
 !.travis.yml
 !/.gitignore
 !/.github
+venv
