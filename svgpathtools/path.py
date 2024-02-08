@@ -3,12 +3,8 @@ svgpathtools is built around: Path, Line, QuadraticBezier, CubicBezier, and
 Arc."""
 
 # External dependencies
-from __future__ import division, absolute_import, print_function
 import re
-try:
-    from collections.abc import MutableSequence  # noqa
-except ImportError:
-    from collections import MutableSequence  # noqa
+from collections.abc import MutableSequence
 from warnings import warn
 from operator import itemgetter
 import numpy as np
@@ -24,7 +20,7 @@ from numpy import exp, sqrt as csqrt, angle as phase, isnan
 try:
     from scipy.integrate import quad
     _quad_available = True
-except:
+except ImportError:
     _quad_available = False
 
 # Internal dependencies
@@ -33,12 +29,6 @@ from .bezier import (bezier_intersections, bezier_bounding_box, split_bezier,
                      bezier2polynomial)
 from .misctools import BugException
 from .polytools import rational_limit, polyroots, polyroots01, imag, real
-
-# To maintain forward/backward compatibility
-try:
-    str = basestring
-except NameError:
-    pass
 
 COMMANDS = set('MmZzLlHhVvCcSsQqTtAa')
 UPPERCASE = set('MZLHVCSQTA')
@@ -1045,8 +1035,7 @@ class QuadraticBezier(object):
         new_quad = QuadraticBezier(self.end, self.control, self.start)
         if self._length_info['length']:
             new_quad._length_info = self._length_info
-            new_quad._length_info['bpoints'] = (
-                self.end, self.control, self.start)
+            new_quad._length_info['bpoints'] = (self.end, self.control, self.start)
         return new_quad
 
     def intersect(self, other_seg, tol=1e-12):

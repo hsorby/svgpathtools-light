@@ -27,10 +27,10 @@ setup(name='svgpathtools',
       author=AUTHOR_NAME,
       author_email=AUTHOR_EMAIL,
       url=GITHUB,
-      download_url='{}/releases/download/{}/svgpathtools-{}-py2.py3-none-any.whl'
+      download_url='{}/releases/download/{}/svgpathtools-{}-py3-none-any.whl'
                    ''.format(GITHUB, VERSION, VERSION),
       license='MIT',
-      install_requires=['numpy', 'svgwrite', 'scipy'],
+      install_requires=['numpy'],
       platforms="OS Independent",
       keywords=['svg', 'svg path', 'svg.path', 'bezier', 'parse svg path', 'display svg'],
       classifiers=[

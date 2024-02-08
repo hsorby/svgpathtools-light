@@ -1,13 +1,10 @@
 """This submodule contains functions related to smoothing paths of Bezier
 curves."""
 
-# External Dependencies
-from __future__ import division, absolute_import, print_function
-
 # Internal Dependencies
 from .path import Path, CubicBezier, Line
 from .misctools import isclose
-from .paths2svg import disvg
+# from .paths2svg import disvg
 
 
 def is_differentiable(path, tol=1e-8):
@@ -45,7 +42,7 @@ def _report_unfixable_kinks(_path, _kink_list):
            "again with the second argument 'ignore_unfixable_kinks=True' "
            "The locations of the unfixable kinks are at the beginnings of "
            "segments: %s" % (len(_kink_list), _kink_list))
-    disvg(_path, nodes=[_path[idx].start for idx in _kink_list])
+    # disvg(_path, nodes=[_path[idx].start for idx in _kink_list])
     raise Exception(mes)
 
 

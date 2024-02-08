@@ -4,7 +4,6 @@ See also the document.py submodule.
 """
 
 # External dependencies:
-from __future__ import division, absolute_import, print_function
 from math import ceil
 from os import path as os_path, makedirs
 from tempfile import gettempdir

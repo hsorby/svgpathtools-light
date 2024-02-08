@@ -2,15 +2,11 @@
 The main tool being the svg2paths() function."""
 
 # External dependencies
-from __future__ import division, absolute_import, print_function
 from xml.dom.minidom import parse
 import os
 from io import StringIO
 import re
-try:
-    from os import PathLike as FilePathLike
-except ImportError:
-    FilePathLike = str
+from os import PathLike as FilePathLike
 
 # Internal dependencies
 from .parser import parse_path
