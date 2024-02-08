@@ -7,3 +7,4 @@ svgpathtools.egg-info
 !/.gitignore
 !/.github
 venv
+dist/
