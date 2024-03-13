@@ -2,10 +2,11 @@
 ![Python](https://img.shields.io/pypi/pyversions/svgpathtools.svg)
 [![PyPI](https://img.shields.io/pypi/v/svgpathtools)](https://pypi.org/project/svgpathtools/)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/svgpathtools?color=yellow)](https://pypistats.org/packages/svgpathtools)
-# svgpathtools
+# svgpathtools-light
 
 
-svgpathtools is a collection of tools for manipulating and analyzing SVG Path objects and Bézier curves.
+svgpathtools-light is a collection of tools for manipulating and analyzing SVG Path objects and Bézier curves.
+This is a lighter version of the svgpathtools package which doesn't require scipy or svgwrite.
 
 ## Features
 
