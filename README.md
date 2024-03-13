@@ -7,7 +7,7 @@
 
 svgpathtools-light is a collection of tools for manipulating and analyzing SVG Path objects and Bézier curves.
 This is a lighter version of the svgpathtools package which doesn't require scipy or svgwrite.
-
+This package **cannot** be used in conjunction with svgpathtools. 
 ## Features
 
 svgpathtools contains functions designed to **easily read, write and display SVG files** as well as *a large selection of geometrically\-oriented tools* to **transform and analyze path elements**.
@@ -41,7 +41,7 @@ Some included tools:
 ## Setup
 
 ```bash
-$ pip install svgpathtools
+$ pip install svgpathtools-light
 ```  
   
 ### Alternative Setup 
